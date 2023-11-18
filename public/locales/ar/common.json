@@ -1,0 +1,18 @@
+{
+  "home": {
+    "Home title": "عنوان المنزل",
+    "Home description": "وصف المنزل Hello freind ho are you" 
+  },
+  "about": {
+    "About title": "حول العنوان",
+    "About description": "حول الوصف"
+  },
+  "emoji": {
+    "Emoji title": "Emoji title",
+    "Emoji description": "Emoji description"
+  },
+  "header": {
+    "Home": "مسكن",
+    "About": "حول"
+  }
+}
