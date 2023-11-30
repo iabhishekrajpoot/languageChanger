@@ -9,44 +9,39 @@ export default function LocaleSwitcher() {
     // const { t } = useTranslation();
 
     const { locales, locale: activeLocale } = router;
-    console.log(locales, "check locals")
+    // console.log(locales, "check locals")
     const otherLocales = locales?.filter(
         (locale) => locale !== activeLocale && locale !== "default"
     );
-    console.log("otherLocales",otherLocales)
+    // console.log("otherLocales", otherLocales)
+
+
     return (
         <span className="text-muted cursor-pointer">
-            {
+            <select className="px-2 text-black"
+                // onChange={(e)=> window.open(`/${e.target.value}`,"_self")}
 
-                console.log(otherLocales, "check other locals")
-            }
-            {otherLocales?.map((locale) => {
-                // const { pathname, query, asPath } = router;
-                console.log(locale,"(locale")
-                return (
-                    <span key={"locale-" + locale}>
-                        <select onChange={(e) =>
-                            router.push(
-                                {
-                                    pathname: router.pathname,
-                                    query: router.query,
-                                },
-                                null,
-                                { locale: e.target.value }
-                            )
-                        }
-                        >
-                            <option value={locale}>{locale}</option>
-                            {/* <option value='ar'>Arabic</option>
-                            <option value='fr'>French</option>
-                            <option value='sp'>Spanish</option>
-                            <option value='pt'>Portage</option>
-                            <option value='jp'>Japense</option> */}
-                        </select>
-                    </span>
-                );
-            })}
-           
+                onChange={(e) =>
+                    router.push(
+                        {
+                            pathname: router.pathname,
+                            query: router.query,
+                        },
+                        null,
+                        { locale: e.target.value }
+                    )
+                }
+            >
+                {otherLocales?.map((locale) => {
+                    // const { pathname, query, asPath } = router;
+                    {/* console.log(locale, "(locale") */ }
+                    return (
+                        <>
+                            <option value={locale} key={"locale-" + locale}>{locale}</option>
+                        </>
+                    );
+                })}
+            </select>
         </span>
     );
 }
